@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // Header container
 export const HeaderWrapper = styled.header`
@@ -31,6 +31,14 @@ export const NavLink = styled.a`
   &:hover {
     text-decoration: underline;
   }
+`;
+
+// Balance display styling
+export const Balance = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #f39c12;
 `;
 
 // Authentication buttons container

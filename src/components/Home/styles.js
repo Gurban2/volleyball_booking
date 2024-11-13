@@ -59,14 +59,14 @@ export const RoomList = styled.div`
   // gap: ${SPACING.gap};
   justify-content: center;
   width: 100%;
-  margin-top: 30px;
+
   align-items: center;
   @media (max-width: 768px) {
     justify-content: center;
   }
 
   > div {
-    width: 50%;
+    width: 70%;
     margin: 10px;
   }
 `;

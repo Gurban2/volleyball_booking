@@ -1,25 +1,56 @@
-import React from 'react';
-import Header from './components/Header';  // Import the Header component
+// styles.js
+import styled from 'styled-components';
 
-const App = () => {
-  const appStyle = {
-    fontFamily: 'Arial, sans-serif',
-    margin: '0',
-    padding: '0',
-  };
+export const HeaderWrapper = styled.header`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+`;
 
-  const mainStyle = {
-    padding: '20px',
-  };
+export const Logo = styled.div`
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
 
-  return (
-    <div style={appStyle}>
-      <Header />
-      <main style={mainStyle}>
-        <h1>Welcome to the Main Page!</h1>
-      </main>
-    </div>
-  );
-};
+export const NavLinks = styled.nav`
+  display: flex;
+  gap: 20px;
+`;
 
-export default App;
+export const NavLink = styled.a`
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+// Balance display styling
+export const Balance = styled.div`
+  font-size: 1rem;
+  color: #f39c12;
+`;
+
+export const AuthButtons = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export const Button = styled.button`
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #e67e22;
+  }
+`;

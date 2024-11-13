@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const FilterBar = ({ roomsData, onFilterAndSort }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortOption, setSortOption] = useState("priceAsc"); // добавляем начальное значение
+  const [sortOption, setSortOption] = useState("default"); // добавляем начальное значение
 
   useEffect(() => {
     handleFilterAndSort();
@@ -19,9 +19,12 @@ const FilterBar = ({ roomsData, onFilterAndSort }) => {
       if (sortOption === "priceAsc") return a.price - b.price;
       if (sortOption === "priceDesc") return b.price - a.price;
       if (sortOption === "playerCountAsc") return a.playerCount - b.playerCount;
-      if (sortOption === "playerCountDesc") return b.playerCount - a.playerCount;
-      if (sortOption === "dateAsc") return new Date(a.dateTime) - new Date(b.dateTime);
-      if (sortOption === "dateDesc") return new Date(b.dateTime) - new Date(a.dateTime);
+      if (sortOption === "playerCountDesc")
+        return b.playerCount - a.playerCount;
+      if (sortOption === "dateAsc")
+        return new Date(a.dateTime) - new Date(b.dateTime);
+      if (sortOption === "dateDesc")
+        return new Date(b.dateTime) - new Date(a.dateTime);
       return 0;
     });
 
@@ -36,7 +39,11 @@ const FilterBar = ({ roomsData, onFilterAndSort }) => {
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search rooms..."
       />
-      <select value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
+      <select
+        value={sortOption}
+        onChange={(e) => setSortOption(e.target.value)}
+      >
+        <option value="default">Default</option>
         <option value="priceAsc">By Lowest Price</option>
         <option value="priceDesc">By Highest Price</option>
         <option value="playerCountAsc">By Lowest Player Count</option>
